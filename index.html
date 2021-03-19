@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script
+	
+    <title>sadiq jaffer</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h1>Contact Us</h1>
+		  <hr>
+          
+        </div>
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" action="thanks.html">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name.." required>
+			  <label for="password">Password</label>
+              <input type="text" id="password" name="password" placeholder="Enter Password.." required>
+			  <label for="repassword">Retype-Password</label>
+              <input type="text" id="confirm_password" name="confirm_password" placeholder="Enter Retype-Password.." required>
+              <label for="mail">Email</label>
+              <input type="text" id="lname" name="email" placeholder="Your Mail.." required>
+              <label for="phone">Phone</label>
+              <input type="text" pattern="^\d{10}$" name="Phone Number" placeholder="Your number.." required>
+              
+			  <label for="country">Country</label>
+              
+			  <select id="country" name="city" required>
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+			  
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="message" placeholder="Write something.." style="height:170px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="column">
+            <img src="img/sadiq1.jpg" style="width:100%">
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbyihRVwgvhUvnT0dvilJyDdclnP607NM_3nnnDJ0CvrPE-98KDoOw732HBeEDHbs5Rl/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                   // window.location.reload()
+                    window.location.href="thanks.html"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+			})
+		
+    </script>
+	<script>
+	var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+body {
+    overflow-x: hidden;
+}
+
+
+
+body {
+    font-size: 1.2rem;
+}
+
+.small-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.main-font-family {
+    font-family: 'Lobster Two', cursive;
+}
+
+.noto-font-family {
+    font-family: 'Noto Serif', serif;
+}
+
+.lobster-font-family {
+    font-family: 'Lobster', cursive;;
+}
+
+.roboto-font-family {
+    font-family: 'Roboto', sans-serif;
+}
+
+.overlay {
+    background-color: rgba(43, 33, 2, .9);
+    height: 100%;
+    width: 100%;
+}
+
+
+/* header */
+
+header {
+    color: white;
+    background: #cc0000;
+    text-align: center;
+    position: sticky;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 65px;
+    position: absolute;
+    z-index: 100000;
+}
+
+header h1 span {
+    color: black;
+    border: 1px solid #FFF;
+    font-size: 120px;
+    line-height: 2;
+    padding: 10px
+}
+
+header .small-container {
+    padding-top: 150px;
+    position: relative;
+    width: 100%;
+}
+
+header form {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    z-index: 10000;
+    display: flex;
+}
+
+
+
+
+@media (max-width: 768px) {
+    
+    .about .container > .row:first-of-type .img {
+        width: 500px;
+    }
+    .about .container > .row:last-of-type .img {
+        height: 350px;
+    }
+    
+    .contact .col-6 h2 {
+        display: none
+    }
+
+    .navbar-brand {
+        float: left;
+        transform: skew(0);
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .navbar .container {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    header form {
+        width: 100%;
+        display: flex;
+    }
+
+
+}
+
